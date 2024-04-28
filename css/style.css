@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#titulo h1{
+    background-color: rgb(10, 6, 6);
+    font-size: 20px;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 30%;
+}
+#titulo2 h2{
+    font-size: 50px;
+   padding-left: 32%;
+   margin-top: 5px;
+}
+.indumentaria h3 {
+    font-size: 40px;
+    background-color: rgb(26, 26, 26);
+    color: white;
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0px 9px 20px rgb(43, 41, 41);
+}
+
+.contenedor-productos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+    
+}
+.contenedor-productos .producto{
+    display: grid;
+    place-items: center;
+}
+.contenedor-productos .producto .producto-boton{
+    margin-top: 10px;
+}
+.imagen{
+    max-width: 100%;
+}
+.descripcion{
+    background-color: black;
+    color: azure;
+}
+.producto .descripcion .producto-nombre{
+    font-size: 20px;
+}
+.producto .descripcion .producto-precio{
+    font-size: 20px;
+}
+.producto .descripcion .producto-boton{
+    font-size: 18px;
+}
+#total{
+    font-size: 40px;
+    background-color: rgb(26, 26, 26);
+    color: white;
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0px 9px 20px rgb(43, 41, 41);
+}
+
+.copy{
+    margin-top: 15px;
+}
