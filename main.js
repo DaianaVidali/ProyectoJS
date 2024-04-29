@@ -46,7 +46,7 @@ const producto = [
 
  const indumentaria = document.querySelector(".contenedor-productos");
  let total = 0;
- const totalDisplay = document.querySelector("#total p");
+ const totalFinal = document.querySelector("#total p");
 
  function agregarAlCarrito(nombreProducto, precioProducto) {
     carrito.push({ nombre: nombreProducto, precio: precioProducto });
@@ -71,16 +71,17 @@ const producto = [
         const boton = document.createElement("button");
         boton.classList.add("producto-boton");
         boton.innerText ="Agregar al carrito";
-        boton.setAttribute("data-precio", productos.precio);
-        boton.setAttribute("data-nombre", productos.nombre);
+        boton.setAttribute("info-precio", productos.precio);
+        boton.setAttribute("info-nombre", productos.nombre);
 
         boton.addEventListener("click",(event)=>{
-            const nombreProducto = event.target.getAttribute("data-nombre");
-            const precioProducto = parseInt(event.target.getAttribute("data-precio"));
+            const nombreProducto = event.target.getAttribute("info-nombre");
+            const precioProducto = parseInt(event.target.getAttribute("info-precio"));
                 total += precioProducto;
-                totalDisplay.textContent= `Su total es de: $${total}`;
+                totalFinal.textContent= `Su total es de: $${total}`;
                 agregarAlCarrito(nombreProducto, precioProducto);
         })
+
         div.append(boton);
 
        
