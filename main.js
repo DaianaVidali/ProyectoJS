@@ -1,62 +1,12 @@
 const carrito = [];
 
-const producto = [
-        {
-            nombre: "Remera Giddy Up",
-            precio: 18000,
-            img:"./img/remera1.webp",
-            id:"remera",
-        },
-        {
-            nombre: "Remera Leopard",
-            precio: 16000,
-            img: "./img/remera13.webp ",
-            id:"remera",
-        },
-        {
-            nombre: "Remera Stardust",
-            precio: 22000,
-            img:"./img/remera12.webp ",
-           id:"remera",
-        },
-        {
-            nombre: "Sweater Believe",
-            precio: 44000,
-            img: "./img/sweater.webp",
-            id:"sweater",
-        },
-        {
-            nombre: "Sweater Wonder",
-            precio: 40000,
-            img:"./img/sweater2.webp",
-            id:"sweater",
-        },
-        {
-            nombre:"Sweater My Heart",
-            precio: 42000,
-            img: "./img/sweater3.webp",
-            id:"sweater",
-        },
-       
+let producto = []
 
 
 
- ]
-
-
- const indumentaria = document.querySelector(".contenedor-productos");
- let total = 0;
- const totalFinal = document.querySelector("#total p");
-
- function agregarAlCarrito(nombreProducto, precioProducto) {
-    carrito.push({ nombre: nombreProducto, precio: precioProducto });
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-}
-
-
-   function subirProductos() {
-         
-    producto.forEach(productos =>{
+ fetch("/data/productos.json")
+    .then(res => res.json())
+    .then(data =>{data.forEach(productos =>{
         const div = document.createElement("div");
         div.classList.add("producto");
         div.innerHTML = `
@@ -89,9 +39,20 @@ const producto = [
       indumentaria.append(div);
     });
 
-  
+    })
 
+
+ const indumentaria = document.querySelector(".contenedor-productos");
+ let total = 0;
+ const totalFinal = document.querySelector("#total p");
+
+ function agregarAlCarrito(nombreProducto, precioProducto) {
+    carrito.push({ nombre: nombreProducto, precio: precioProducto });
+    localStorage.setItem("carrito", JSON.stringify(carrito));
 }
-    
+
+
+ 
+   Swal.fire("¡Esperamos que tengas una excelente experiencia!");
+
    
-   subirProductos();
